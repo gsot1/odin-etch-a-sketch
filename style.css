@@ -21,7 +21,11 @@ body {
 .maingrid-item {
     height: 3rem;
     width: 3rem;
-    background-color: black;
+    background-color: white;
     margin: 0.1rem;
     padding: 0;
+}
+
+.mg-item__hovered {
+    background-color: darkgrey;
 }
