@@ -8,8 +8,7 @@ function init() {
     insertDiv.appendChild(chButton);
 }
 
-function generate() {
-    let input;
+function generate(input = 'NaN') {
 
     while (typeof input !== 'number' || !input) { // ensure user input converts to an actual number and not NaN
         input = prompt('Enter a new number size for the grid:');
@@ -46,3 +45,4 @@ function generate() {
 }
 
 init();
+generate(1);
