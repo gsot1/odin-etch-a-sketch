@@ -12,6 +12,8 @@ body {
 #maingrid {
     display: flex;
     flex-direction: column;
+    height: 25rem;
+    width: 25rem;
 }
 
 .maingrid-row {

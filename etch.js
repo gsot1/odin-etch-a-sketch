@@ -1,22 +1,41 @@
-// TEMPORARY: Create a 4x4 grid
-const SIZE = 4;
+const GRIDSIZE = 25;
 const insertDiv = document.getElementById('maingrid');
 
-for (let i = 1; i < SIZE+1; i++) {
-    
-    const row = document.createElement('div');
-    row.classList.add('maingrid-row');
+const chButton = document.createElement('button');
+chButton.addEventListener('click', generate);
+chButton.innerText = 'GENERATE';
+insertDiv.appendChild(chButton);
 
-    for (let j = 1; j < SIZE+1; j++) {
-        const item = document.createElement('div');
-        item.classList.add('maingrid-item');
-        
-        item.addEventListener('mouseover', () => item.classList.add('mg-item__hovered'), {
-            once: true
-        });
+function generate() {
+    let input;
 
-        row.appendChild(item);
+    while (typeof input !== 'number' || !input) { // ensure input converts to an actual number and not NaN
+        input = prompt('Enter a new number size for the grid:');
+        input = Number(input);
     }
 
-    insertDiv.appendChild(row);
+    input = Math.round(input); // round number to an integer and cap it at 100
+    let size = input < 100 ? input : 100;
+
+    for (let i = 1; i < size+1; i++) { // Create a set of size rows
+    
+        const row = document.createElement('div');
+        row.classList.add('maingrid-row');
+    
+        for (let j = 1; j < size+1; j++) { // ...with size items in each row
+            const item = document.createElement('div');
+            item.classList.add('maingrid-item');
+            
+            item.addEventListener('mouseover', () => item.classList.add('mg-item__hovered'), { // ...with each item having a single-use listener
+                once: true
+            });
+
+            item.style.height = `${GRIDSIZE/size}rem`; // not ideal, but using inline styles to size grid items within GRIDSIZExGRIDSIZE
+            item.style.width = `${GRIDSIZE/size}rem`;
+    
+            row.appendChild(item);
+        }
+    
+        insertDiv.appendChild(row);
+    }
 }
