@@ -14,11 +14,11 @@ body {
     flex-direction: column;
 }
 
-#maingrid-row {
+.maingrid-row {
     display: flex;
 }
 
-#maingrid-item {
+.maingrid-item {
     height: 3rem;
     width: 3rem;
     background-color: black;

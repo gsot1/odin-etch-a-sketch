@@ -4,9 +4,9 @@ const insertDiv = document.getElementById('maingrid');
 
 for (let i = 1; i < SIZE+1; i++) {
     const row = document.createElement('div');
-    row.id = 'maingrid-row';
+    row.classList.add('maingrid-row');
     for (let j = 1; j < SIZE+1; j++) {
-        row.insertAdjacentHTML('beforeend', `<div id="maingrid-item"></div>`)
+        row.insertAdjacentHTML('beforeend', `<div class="maingrid-item"></div>`)
     }
     insertDiv.appendChild(row);
 }
