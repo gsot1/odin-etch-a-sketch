@@ -8,3 +8,20 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+#maingrid {
+    display: flex;
+    flex-direction: column;
+}
+
+#maingrid-row {
+    display: flex;
+}
+
+#maingrid-item {
+    height: 3rem;
+    width: 3rem;
+    background-color: black;
+    margin: 0.1rem;
+    padding: 0;
+}
