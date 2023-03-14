@@ -5,15 +5,16 @@ body {
     padding: 0;
     height: 100vh;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
+
+button { margin-top: 1rem; }
 
 #maingrid {
     display: flex;
     flex-direction: column;
-    height: 25rem;
-    width: 25rem;
+    height: 64rem;
+    width: 64rem;
 }
 
 .maingrid-row {
@@ -21,10 +22,11 @@ body {
 }
 
 .maingrid-item {
-    height: 3rem;
-    width: 3rem;
+    display: flex;
     background-color: white;
-    margin: 0.1rem;
+    box-sizing: border-box;
+    border: 0.025rem solid black;
+    margin: 0;
     padding: 0;
 }
 
